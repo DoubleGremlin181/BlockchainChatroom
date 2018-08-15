@@ -35,5 +35,6 @@ def chain():
 
 
 
-print(jsonify({'Index': blockchain[0].index, 'Data': blockchain[0].data, 'Hash': blockchain[0].hash,
-              'Previous_Hash': blockchain[0].previous_hash, 'Timestamp': blockchain[0].timestamp}))
+#print(jsonify({'Index': blockchain[0].index, 'Data': blockchain[0].data, 'Hash': blockchain[0].hash,
+#             'Previous_Hash': blockchain[0].previous_hash, 'Timestamp': blockchain[0].timestamp}))
+#TODO fix
