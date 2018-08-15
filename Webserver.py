@@ -6,8 +6,8 @@ import json
 
 app = Flask(__name__)
 node_identifier = str(uuid4()).replace('-', '')
-blockchain = [Blockchain.create_genesis_block(datetime.datetime.now())] #TODO Make genisis not run on every boot
-                                                                        #TODO Allow syncing with a different server
+blockchain = [Blockchain.create_genesis_block(datetime.datetime.now())]  #TODO Make genisis not run on every boot
+                                                                         #TODO Allow syncing with a different server
 
 @app.route('/new_block', methods=['POST'])
 def new_block():
@@ -26,10 +26,10 @@ def chain():
     values = request.get_json()
     if 'index' in values :
         if 'index' > -(len(blockchain) - 1)and 'index' < len(blockchain):
-            return blockchain[index], 200    #TODO Jsonify
+            return blockchain[values['index']], 200    #TODO Jsonify and fix indexing
         else:
             response = {'message': 'Index out of bounds'}
-            return jsonify(response), 404
+            return jsonify(response), 400
     else:
         return blockchain[-1], 200  # TODO Jsonify
 
@@ -37,4 +37,4 @@ def chain():
 
 #print(jsonify({'Index': blockchain[0].index, 'Data': blockchain[0].data, 'Hash': blockchain[0].hash,
 #             'Previous_Hash': blockchain[0].previous_hash, 'Timestamp': blockchain[0].timestamp}))
-#TODO fix
+#TODO use json library
