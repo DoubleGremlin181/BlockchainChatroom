@@ -1,6 +1,6 @@
-#Blockchain Chatroom
+Blockchain Chatroom
+=============
 
-###WIP
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)
 
