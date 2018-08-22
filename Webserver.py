@@ -16,7 +16,8 @@ def json_block(index):
 
 @app.route('/', methods=['GET'])
 def root():
-    response =  {'message': 'Hello World!'}
+    response =  {'message': 'Address: /new_block\tMethod: POST\tValues: text\n'
+                            'Address: /get_block\tMethod: GET\tValues: index'}
     return jsonify(response), 200
 
 @app.route('/new_block', methods=['POST'])
